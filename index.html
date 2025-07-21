@@ -80,7 +80,7 @@
   </body>
 </html> -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <title>RA com vídeo em loop - funcional</title>
@@ -90,12 +90,12 @@
   </head>
   <body style="margin: 0; overflow: hidden;" onclick="document.getElementById('meuvideo').play()">
 
-    <!-- Dica para o usuário -->
+    
     <p style="position: absolute; top: 10px; left: 10px; color: white; z-index: 999;">
       👉 Toque na tela para iniciar o vídeo
     </p>
 
-    <!-- Vídeo escondido -->
+
     <video 
       id="meuvideo" 
       src="videoplayback.mp4" 
@@ -124,3 +124,36 @@
 </html>
 
 
+ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RA com Raposa Gigante</title>
+    <meta charset="utf-8" />
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+  </head>
+  <body style="margin: 0; overflow: hidden;">
+
+    <p style="position: absolute; top: 10px; left: 10px; color: white; z-index: 999;">
+      👉 Aponte o caderno com o marcador e veja a raposa invadir sua mesa!
+    </p>
+
+    <a-scene embedded arjs="sourceType: webcam;">
+      <a-marker type="pattern" url="pattern-marcador.patt">
+        <a-entity 
+          gltf-model="raposa.glb" 
+          scale="1.5 1.5 1.5" 
+          rotation="0 180 0" 
+          position="0 0 0.2">
+        </a-entity>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+
+  </body>
+</html>
+
+ 
